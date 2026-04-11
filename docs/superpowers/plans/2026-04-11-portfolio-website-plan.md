@@ -510,7 +510,7 @@
 - Create: `src/app/admin/layout.tsx`
 - Create: `src/app/admin/page.tsx`
 
-- [ ] **Step 1: 创建 Admin 布局**
+- [x] **Step 1: 创建 Admin 布局**
   在 `src/app/admin/layout.tsx` 中：
   ```tsx
   import { ReactNode } from 'react';
@@ -544,7 +544,7 @@
   }
   ```
 
-- [ ] **Step 2: 创建 Profile 编辑页面 (UI 骨架)**
+- [x] **Step 2: 创建 Profile 编辑页面 (UI 骨架)**
   在 `src/app/admin/page.tsx` 中：
   ```tsx
   export default function AdminProfile() {
@@ -563,7 +563,7 @@
   }
   ```
 
-- [ ] **Step 3: 提交代码**
+- [x] **Step 3: 提交代码**
   ```bash
   git add src/app/admin
   git commit -m "feat: add admin dashboard layout and profile placeholder"
