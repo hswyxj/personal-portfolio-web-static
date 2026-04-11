@@ -223,7 +223,7 @@
 - Create: `src/components/ProjectCard.tsx`
 - Modify: `src/app/page.tsx`
 
-- [ ] **Step 1: 创建 ProjectCard 组件**
+- [x] **Step 1: 创建 ProjectCard 组件**
   实现带有悬停放大和信息浮现动效的卡片 `src/components/ProjectCard.tsx`：
   ```tsx
   'use client';
@@ -269,7 +269,7 @@
   }
   ```
 
-- [ ] **Step 2: 创建 ProjectGallery 组件 (瀑布流 + 过滤)**
+- [x] **Step 2: 创建 ProjectGallery 组件 (瀑布流 + 过滤)**
   使用 `react-masonry-css` 和 `framer-motion` 在 `src/components/ProjectGallery.tsx` 中实现：
   ```tsx
   'use client';
@@ -328,7 +328,7 @@
   }
   ```
 
-- [ ] **Step 3: 更新主页**
+- [x] **Step 3: 更新主页**
   在 `src/app/page.tsx` 中引入 `ProjectGallery`（暂时使用 mock 数据测试图片需使用占位符，并在 `next.config.mjs` 中配置 images 域名，如果需要的话）：
   ```tsx
   import HeroProfile from '@/components/HeroProfile';
@@ -371,7 +371,7 @@
   export default nextConfig;
   ```
 
-- [ ] **Step 4: 提交代码**
+- [x] **Step 4: 提交代码**
   ```bash
   git add src/components/ProjectCard.tsx src/components/ProjectGallery.tsx src/app/page.tsx next.config.mjs
   git commit -m "feat: add masonry project gallery with filters and animations"
