@@ -1,5 +1,6 @@
 import HeroProfile from '@/components/HeroProfile';
 import ProjectGallery from '@/components/ProjectGallery';
+import { createClient } from '@/lib/supabase/server';
 
 const mockProfile = {
   id: '1',
@@ -18,11 +19,27 @@ const mockProjects = [
   { id: '5', title: 'Coffee Shop Mini Program', description: 'Order and pickup coffee easily.', category: '小程序', image_url: 'https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=800&q=80', featured: false, created_at: '', project_url: null },
 ];
 
-export default function Home() {
+export default async function Home() {
+  const supabase = await createClient();
+
+  const { data: profileData, error: profileError } = await supabase
+    .from('profiles')
+    .select('*')
+    .limit(1)
+    .single();
+
+  const { data: projectsData, error: projectsError } = await supabase
+    .from('projects')
+    .select('*')
+    .order('created_at', { ascending: false });
+
+  const profile = profileData || mockProfile;
+  const projects = projectsData || mockProjects;
+
   return (
     <main className="min-h-screen bg-[#0a0a0a] text-white selection:bg-white/30 pt-10">
-      <HeroProfile profile={mockProfile} />
-      <ProjectGallery projects={mockProjects} />
+      <HeroProfile profile={profile} />
+      <ProjectGallery projects={projects} />
     </main>
   );
 }

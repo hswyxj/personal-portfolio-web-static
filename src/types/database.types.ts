@@ -9,7 +9,16 @@ export type Json =
 export interface Database {
   public: {
     Tables: {
-      [_ in never]: never
+      profiles: {
+        Row: Profile;
+        Insert: Omit<Profile, 'id'>;
+        Update: Partial<Omit<Profile, 'id'>>;
+      };
+      projects: {
+        Row: Project;
+        Insert: Omit<Project, 'id' | 'created_at'>;
+        Update: Partial<Omit<Project, 'id' | 'created_at'>>;
+      };
     }
     Views: {
       [_ in never]: never
