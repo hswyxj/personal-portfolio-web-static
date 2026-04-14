@@ -21,7 +21,7 @@ export default function About({ profile }: AboutProps) {
           <div className="absolute inset-0 bg-[#FD6F00] rounded-full -translate-x-4 -translate-y-4 lg:-translate-x-8 lg:-translate-y-8 opacity-95"></div>
           <div className="absolute inset-0 rounded-full overflow-hidden border-8 border-white z-10 shadow-sm bg-gray-100">
             <img
-              src="/assets/avatar (2).png"
+              src={`${process.env.NEXT_PUBLIC_IMAGES_URL}/assets/avatar (2).png`}
               alt="Sean Hao Surprised"
               className="w-full h-full object-cover scale-110 translate-y-4"
             />
