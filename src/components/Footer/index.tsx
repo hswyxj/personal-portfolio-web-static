@@ -27,28 +27,16 @@ export default function Footer({ tabList }: NavbarProps) {
           ))}
         </div>
         <div className="flex gap-8 mb-20">
-          <a href="#" className="text-[#333333] hover:text-[#FD6F00] transition-colors" aria-label="Facebook">
+          <a href="https://github.com/hswyxj" className="text-[#333333] hover:text-[#FD6F00] transition-colors" aria-label="GitHub">
             <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77 5.44 5.44 0 0 0 3.5 8.09c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 19.13V23" />
             </svg>
           </a>
-          <a href="#" className="text-[#333333] hover:text-[#FD6F00] transition-colors" aria-label="Twitter">
+          <a href="https://gitee.com/hswyxj" className="text-[#333333] hover:text-[#FD6F00] transition-colors" aria-label="Gitee">
             <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53A4.48 4.48 0 0 0 22.43 1a9.09 9.09 0 0 1-2.88 1.1A4.52 4.52 0 0 0 16.11 0c-2.5 0-4.5 2.24-4.5 5a5.09 5.09 0 0 0 .12 1.14A12.94 12.94 0 0 1 1.64 1.15 4.75 4.75 0 0 0 1 3.91a4.48 4.48 0 0 0 2 3.74A4.48 4.48 0 0 1 .88 7v.06A4.5 4.5 0 0 0 4.5 11.5a4.49 4.49 0 0 1-2 .08 4.51 4.51 0 0 0 4.2 3.12A9.05 9.05 0 0 1 1 19.54a12.87 12.87 0 0 0 6.95 2.04c8.35 0 12.91-6.9 12.91-12.89 0-.2 0-.4-.01-.6A9.18 9.18 0 0 0 23 3z" />
-            </svg>
-          </a>
-          <a href="#" className="text-[#333333] hover:text-[#FD6F00] transition-colors" aria-label="Instagram">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-              <path d="M17.5 6.5h.01" />
-            </svg>
-          </a>
-          <a href="#" className="text-[#333333] hover:text-[#FD6F00] transition-colors" aria-label="LinkedIn">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
-              <rect x="2" y="9" width="4" height="12" />
-              <circle cx="4" cy="4" r="2" />
+              <path d="M4 7l8-5 8 5v10l-8 5-8-5V7z" />
+              <path d="M9.5 10.5h4a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-3" />
+              <path d="M9.5 12.5v-2" />
             </svg>
           </a>
         </div>
