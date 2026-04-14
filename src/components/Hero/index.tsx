@@ -11,7 +11,7 @@ export default function Hero({ profile }: HeroProps) {
       <div className="flex-1 space-y-6 z-10 relative">
         <h3 className="text-2xl font-semibold text-gray-800">Hi I am</h3>
         <h2 className="text-[#FD6F00] text-4xl font-bold tracking-tight">Sean Hao</h2>
-        <h1 className="text-[5rem] lg:text-[7rem] font-bold leading-[1.1] tracking-tighter text-[#1A1A1A]">
+        <h1 className="text-[3.8rem] lg:text-[7rem] font-bold leading-[1.1] tracking-tighter text-[#1A1A1A]">
           Full Stack 
           <br />
           <span className="pl-16 lg:pl-32 block">Developer</span>
