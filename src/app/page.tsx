@@ -84,6 +84,30 @@ export default function Home() {
 ]);
   const [projects, setProjects] = useState<Project[]>([
     {
+        "id": "ea559204-c565-42c0-8886-82578828dad9",
+        "project_id": "550e8400-e29b-41d4-a716-446655440000",
+        "title": "个人作品集｜Next.js + Supabase + Node.js + Tailwindcss ",
+        "description": "基于 Next.js + Supabase + Node.js 构建，展示项目案例、技术栈与联系方式",
+        "category": "作品集",
+        "image_url": `${process.env.NEXT_PUBLIC_IMAGES_URL}/assets/web7_1.png`,
+        "project_url": `${process.env.NEXT_PUBLIC_IMAGES_URL}/assets/web7_2.png`,
+        "github_url":null,
+        "featured": true,
+        "created_at": "2026-04-12T10:07:20.178596+00:00"
+    },
+    {
+        "id": "cb06bf23-16e9-49d1-a539-14650b55e0e1",
+        "project_id": "550e8400-e29b-41d4-a716-446655440000",
+        "title": "企业官网 AI编程对话 | Next.js + Tailwindcss + Supabase Node.js",
+        "description": "企业官网落地页（响应式）",
+        "category": "企业官网",
+        "image_url": `${process.env.NEXT_PUBLIC_IMAGES_URL}/assets/web2_1.png`,
+        "project_url": `${process.env.NEXT_PUBLIC_IMAGES_URL}/assets/web2_2.png`,
+        "github_url":null,
+        "featured": false,
+        "created_at": "2026-04-12T10:07:20.178596+00:00"
+    },
+    {
         "id": "b97ad122-0b2e-4adf-ae89-541fc1154e1a",
         "project_id": "550e8400-e29b-41d4-a716-446655440000",
         "title": "社区小程序 | uniapp + Vue2 + WebSocket ",
@@ -129,30 +153,6 @@ export default function Home() {
         "project_url": `${process.env.NEXT_PUBLIC_IMAGES_URL}/assets/web4_2.png`,
         "github_url":null,
         "featured": true,
-        "created_at": "2026-04-12T10:07:20.178596+00:00"
-    },
-    {
-        "id": "ea559204-c565-42c0-8886-82578828dad9",
-        "project_id": "550e8400-e29b-41d4-a716-446655440000",
-        "title": "个人作品集｜Next.js + Supabase + Node.js + Tailwindcss ",
-        "description": "基于 Next.js + Supabase + Node.js 构建，展示项目案例、技术栈与联系方式",
-        "category": "作品集",
-        "image_url": `${process.env.NEXT_PUBLIC_IMAGES_URL}/assets/web7_1.png`,
-        "project_url": `${process.env.NEXT_PUBLIC_IMAGES_URL}/assets/web7_2.png`,
-        "github_url":null,
-        "featured": true,
-        "created_at": "2026-04-12T10:07:20.178596+00:00"
-    },
-    {
-        "id": "cb06bf23-16e9-49d1-a539-14650b55e0e1",
-        "project_id": "550e8400-e29b-41d4-a716-446655440000",
-        "title": "企业官网 AI编程对话 | Next.js + Tailwindcss + Supabase Node.js",
-        "description": "企业官网落地页（响应式）",
-        "category": "企业官网",
-        "image_url": `${process.env.NEXT_PUBLIC_IMAGES_URL}/assets/web2_1.png`,
-        "project_url": `${process.env.NEXT_PUBLIC_IMAGES_URL}/assets/web2_2.png`,
-        "github_url":null,
-        "featured": false,
         "created_at": "2026-04-12T10:07:20.178596+00:00"
     },
     {
