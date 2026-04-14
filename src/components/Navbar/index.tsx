@@ -28,7 +28,7 @@ export default function Navbar({ tabList }: NavbarProps) {
           </a>
         ))}
         <a
-          href="/CV/SeanHao-远程前端开发.docx"
+          href={`${process.env.NEXT_PUBLIC_IMAGES_URL}/CV/SeanHao-远程前端开发.pdf`}
           download
           className="bg-[#FD6F00] text-white px-8 py-3 rounded-lg hover:bg-[#e06200] transition-colors shadow-sm ml-2 cursor-pointer inline-flex items-center justify-center"
         >
