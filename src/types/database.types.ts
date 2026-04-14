@@ -52,6 +52,7 @@ export type Profile = {
   profession: string | null;
   wechat: string | null;
   email: string | null;
+  phone: string | null;
   bio: string | null;
   skills: Object[] | null;
   hero_intro: string | null;
@@ -59,7 +60,7 @@ export type Profile = {
 
 export type Project = {
   id: string;
-  user_id: string | null;
+  project_id: string | null;
   title: string;
   description: string;
   category: string;
@@ -72,7 +73,7 @@ export type Project = {
 
 export type Service = {
   id: string;
-  user_id: string | null;
+  project_id: string | null;
   title: string;
   description: string;
   icon_url: string | null;
@@ -82,7 +83,7 @@ export type Service = {
 
 export type Testimonial = {
   id: string;
-  user_id: string | null;
+  project_id: string | null;
   name: string;
   role: string;
   quote: string;

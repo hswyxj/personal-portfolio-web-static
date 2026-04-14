@@ -27,9 +27,13 @@ export default function Navbar({ tabList }: NavbarProps) {
             {tab.label}
           </a>
         ))}
-        <button className="bg-[#FD6F00] text-white px-8 py-3 rounded-lg hover:bg-[#e06200] transition-colors shadow-sm ml-2 cursor-pointer">
+        <a
+          href="/CV/SeanHao-远程前端开发.docx"
+          download
+          className="bg-[#FD6F00] text-white px-8 py-3 rounded-lg hover:bg-[#e06200] transition-colors shadow-sm ml-2 cursor-pointer inline-flex items-center justify-center"
+        >
           Download CV
-        </button>
+        </a>
       </div>
     </nav>
   );

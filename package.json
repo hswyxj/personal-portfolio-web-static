@@ -1,12 +1,15 @@
 {
-  "name": "workspace",
-  "version": "0.1.0",
+  "name": "personal-portfolio-web",
+  "version": "1.0.0",
   "private": true,
+  "homepage": "https://personal-portfolio-web.github.io",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "predeploy": "touch out/.nojekyll",
+    "deploy": "gh-pages -d out --dotfiles"
   },
   "dependencies": {
     "@supabase/ssr": "^0.10.2",

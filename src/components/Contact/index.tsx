@@ -66,6 +66,14 @@ export default function Contact({
       </form>
       {error ? <p className="max-w-3xl mx-auto flex flex-col sm:flex-row gap-4 px-4 mt-4 text-sm text-red-600">{error}</p> : null}
       {message ? <p className="max-w-3xl mx-auto flex flex-col sm:flex-row gap-4 px-4 mt-4 text-sm text-green-600">{message}</p> : null}
+      {profile.phone ? (
+        <p className="max-w-3xl mx-auto px-4 mt-4 text-sm text-gray-600">
+          直接电话联系：
+          <a href={`tel:${profile.phone}`} className="ml-2 text-[#FD6F00] hover:underline">
+            {profile.phone}
+          </a>
+        </p>
+      ) : null}
     </section>
   );
 }

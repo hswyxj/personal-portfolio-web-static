@@ -20,9 +20,13 @@ export default function Hero({ profile }: HeroProps) {
           {profile?.hero_intro || "10+年计算机专业工作经验，其中7年前端 + 1年前后端一体 + 3年测试/测开背景的全栈工程师，擅长从0到1交付业务系统与工程化架构，兼顾性能、质量与上线效率。"}
         </p>
         <div className="pt-4">
-          <button className="bg-[#FD6F00] text-white px-10 py-4 rounded-lg hover:bg-[#e06200] transition-colors font-semibold text-lg shadow-md hover:shadow-lg cursor-pointer">
+          <a
+            href={profile?.phone ? `tel:${profile.phone}` : '#contact'}
+            className="inline-flex items-center justify-center bg-[#FD6F00] text-white px-10 py-4 rounded-lg hover:bg-[#e06200] transition-colors font-semibold text-lg shadow-md hover:shadow-lg cursor-pointer"
+            aria-label={profile?.phone ? `Call ${profile.phone}` : 'Contact me'}
+          >
             Hire Me
-          </button>
+          </a>
         </div>
       </div>
       <div className="flex-1 flex flex-col items-center lg:items-end justify-center relative w-full">

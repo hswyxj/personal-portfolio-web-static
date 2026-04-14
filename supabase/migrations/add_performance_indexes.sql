@@ -6,6 +6,7 @@ CREATE TABLE IF NOT EXISTS profiles (
   profession TEXT NULL,
   wechat TEXT NULL,
   email TEXT NULL,
+  phone TEXT NULL,
   bio TEXT NULL,
   skills JSONB NULL,
   hero_intro TEXT NULL,
@@ -85,6 +86,7 @@ CREATE INDEX IF NOT EXISTS idx_testimonials_order_asc
   profession,
   wechat,
   email,
+  phone,
   bio,
   skills,
   hero_intro
@@ -95,6 +97,7 @@ CREATE INDEX IF NOT EXISTS idx_testimonials_order_asc
   E'Full Stack\r\nDeveloper',
   'test_wechat',
   'h19111426051@163.com',
+  '18156053451',
   E'我长期深耕“可交付”的工程实践：既能把产品需求快速落地为体验稳定的业务系统，也能从架构与工程化角度提升团队效率与系统质量。职业经历覆盖测试/测开、前端与后端链路（ 3年测试/测开 + 7年前端 + 1年前后端），让我在设计方案时天然兼顾可测性、可维护性与线上稳定性；同时具备2年以上管理经验，能够推进跨角色协作与项目按期上线。技术栈覆盖 Vue2/3、React、Next.js、Python、uniapp、小程序、Qiankun 微前端、GIS与可视化等；熟悉 Git、MySQL、Supabase 等工具与服务，并有架构治理、性能优化、部署与运维优化的实战经验。我希望加入重视工程质量与业务价值的团队，持续用技术把复杂问题做简单、把交付做可靠。',
   '[{"label":"Vue2/3","progress":"96%"},{"label":"React","progress":"88%"},{"label":"uniapp","progress":"95%"},{"label":"Next.js","progress":"90%"},{"label":"Node.js","progress":"85%"}]'::jsonb,
   E'10+年计算机专业工作经验，其中7年前端 + 1年前后端一体 + 3年测试/测开背景的全栈工程师，擅长从0到1交付业务系统与工程化架构，兼顾性能、质量与上线效率。'

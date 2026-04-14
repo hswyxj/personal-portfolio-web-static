@@ -26,16 +26,7 @@ npm run lint     # Run ESLint
 ## Key Files
 
 - `src/app/page.tsx` - Main landing page with project gallery
-- `src/app/login/page.tsx` - Admin login
-- `src/app/admin/page.tsx` - Protected admin dashboard
-- `src/lib/supabase/client.ts` - Browser Supabase client
-- `src/lib/supabase/server.ts` - Server-side Supabase helpers
 
-## Important Notes
-
-- This is Next.js 16, which has breaking changes from earlier versions. Read `node_modules/next/dist/docs/` before writing code.
-- Environment variables required: `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` (see .env.example)
-- Admin route is protected via route proxy in src/proxy.ts
 
 ## gstack
 
