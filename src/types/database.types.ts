@@ -19,6 +19,16 @@ export interface Database {
         Insert: Omit<Project, 'id' | 'created_at'>;
         Update: Partial<Omit<Project, 'id' | 'created_at'>>;
       };
+      services: {
+        Row: Service;
+        Insert: Omit<Service, 'id' | 'created_at'>;
+        Update: Partial<Omit<Service, 'id' | 'created_at'>>;
+      };
+      testimonials: {
+        Row: Testimonial;
+        Insert: Omit<Testimonial, 'id' | 'created_at'>;
+        Update: Partial<Omit<Testimonial, 'id' | 'created_at'>>;
+      };
     }
     Views: {
       [_ in never]: never
@@ -37,21 +47,47 @@ export interface Database {
 
 export type Profile = {
   id: string;
-  name: string;
-  wechat: string;
-  email: string;
-  bio: string;
-  skills: string[];
+  user_id: string | null;
+  name: string | null;
+  profession: string | null;
+  wechat: string | null;
+  email: string | null;
+  bio: string | null;
+  skills: Object[] | null;
+  hero_intro: string | null;
 };
 
 export type Project = {
   id: string;
+  user_id: string | null;
   title: string;
   description: string;
   category: string;
   image_url: string;
   project_url: string | null;
+  github_url: string | null;
   created_at: string;
   featured: boolean;
+};
+
+export type Service = {
+  id: string;
+  user_id: string | null;
+  title: string;
+  description: string;
+  icon_url: string | null;
+  order: number;
+  created_at: string;
+};
+
+export type Testimonial = {
+  id: string;
+  user_id: string | null;
+  name: string;
+  role: string;
+  quote: string;
+  avatar_url: string;
+  order: number;
+  created_at: string;
 };
 

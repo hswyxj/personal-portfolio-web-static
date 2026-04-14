@@ -1,45 +1,73 @@
-import HeroProfile from '@/components/HeroProfile';
-import ProjectGallery from '@/components/ProjectGallery';
-import { createClient } from '@/lib/supabase/server';
+import Navbar from '@/components/Navbar';
+import Hero from '@/components/Hero';
+import About from '@/components/About';
+import Services from '@/components/Services';
+import Projects from '@/components/Projects';
+import Testimonials from '@/components/Testimonials';
+import Contact from '@/components/Contact';
+import Footer from '@/components/Footer';
+import type { Project, Profile, Service, Testimonial } from '@/types/database.types';
 
-const mockProfile = {
-  id: '1',
-  name: 'Creative Studio',
-  wechat: 'studio_wechat',
-  email: 'hello@studio.com',
-  bio: 'We build digital experiences that matter.',
-  skills: ['Next.js', 'React', 'Framer Motion', 'UI/UX']
-};
+const BASE_URL = process.env.NEXT_PUBLIC_APP_URL ?? '';
 
-const mockProjects = [
-  { id: '1', title: 'Corporate Site', description: 'Modern corporate website with elegant design and smooth animations.', category: '网站', image_url: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80', featured: false, created_at: '', project_url: null },
-  { id: '2', title: 'Data Dash', description: 'Comprehensive data analytics dashboard for enterprise users.', category: '大屏可视化', image_url: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80', featured: true, created_at: '', project_url: null },
-  { id: '3', title: 'E-commerce App', description: 'Mobile shopping experience with AR features.', category: 'APP', image_url: 'https://images.unsplash.com/photo-1512428559087-560fa5ceab42?w=800&q=80', featured: false, created_at: '', project_url: null },
-  { id: '4', title: 'Admin Pro', description: 'Backend management system with complex permissions.', category: '管理后台', image_url: 'https://images.unsplash.com/photo-1555421689-d68471e189f2?w=800&q=80', featured: false, created_at: '', project_url: null },
-  { id: '5', title: 'Coffee Shop Mini Program', description: 'Order and pickup coffee easily.', category: '小程序', image_url: 'https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=800&q=80', featured: false, created_at: '', project_url: null },
-];
+async function fetchApi<T>(endpoint: string) {
+  try {
+    const res = await fetch(`${BASE_URL}${endpoint}`, { cache: 'no-store' });
+    const json = await res.json();
+    if (!res.ok || !json.success) {
+      return { data: null as T | null, error: json.error?.message || 'Failed to fetch data' };
+    }
+    return { data: json.data as T, error: '' };
+  } catch (error) {
+    return { data: null as T | null, error: 'Network error' };
+  }
+}
 
 export default async function Home() {
-  const supabase = await createClient();
+  const tabList = [
+    { id: 'home', label: 'Home' },
+    { id: 'about', label: 'About Me' },
+    { id: 'services', label: 'Services' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'testimonials', label: 'Testimonials' },
+    { id: 'contact', label: 'Contact' },
+  ];
 
-  const { data: profileData, error: profileError } = await supabase
-    .from('profiles')
-    .select('*')
-    .limit(1)
-    .single();
+  const profileResult = await fetchApi<Profile>('/api/profile');
+  const profile = profileResult.data ?? {
+    id: '',
+    user_id: null,
+    name: '',
+    profession: null,
+    wechat: null,
+    email: null,
+    bio: null,
+    skills: null,
+    hero_intro: null,
+  } as Profile;
 
-  const { data: projectsData, error: projectsError } = await supabase
-    .from('projects')
-    .select('*')
-    .order('created_at', { ascending: false });
+  const profileIdQuery = profileResult.data?.id ? `?profileId=${encodeURIComponent(profileResult.data.id)}` : '';
 
-  const profile = profileData || mockProfile;
-  const projects = projectsData || mockProjects;
+  const [servicesResult, projectsResult, testimonialsResult] = await Promise.all([
+    fetchApi<{ services: Service[] }>(`/api/services${profileIdQuery}`),
+    fetchApi<{ projects: Project[] }>(`/api/projects${profileIdQuery}`),
+    fetchApi<{ testimonials: Testimonial[] }>(`/api/testimonials${profileIdQuery}`),
+  ]);
 
+  const services = servicesResult.data?.services ?? [];
+  const projects = projectsResult.data?.projects ?? [];
+  const testimonials = testimonialsResult.data?.testimonials ?? [];
+  console.log(profile, services, projects, testimonials);
   return (
-    <main className="min-h-screen bg-[#0a0a0a] text-white selection:bg-white/30 pt-10">
-      <HeroProfile profile={profile} />
-      <ProjectGallery projects={projects} />
+    <main className="min-h-screen bg-white text-black font-sans selection:bg-[#FD6F00] selection:text-white">
+      <Navbar tabList={tabList} />
+      <Hero profile={profile}  />
+      <About profile={profile} />
+      <Services services={services} errorMessage={servicesResult.error} />
+      <Projects projects={projects} errorMessage={projectsResult.error} />
+      <Testimonials testimonials={testimonials} errorMessage={testimonialsResult.error} />
+      <Contact profile={profile} buttonLabel="Contact Me" />
+      <Footer tabList={tabList} />
     </main>
   );
 }
