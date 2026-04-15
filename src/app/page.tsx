@@ -27,7 +27,7 @@ const emptyProfile = {
 
 export default function Home() {
   const tabList = [
-    { id: 'home', label: 'Home' },
+    { id: 'hero', label: 'Home' },
     { id: 'about', label: 'About Me' },
     { id: 'services', label: 'Services' },
     { id: 'projects', label: 'Projects' },
@@ -44,7 +44,7 @@ export default function Home() {
     "wechat": "test_wechat",
     "email": "h19111426051@163.com",
     "phone": "18156053451",
-    "bio": "我长期深耕“可交付”的工程实践：既能把产品需求快速落地为体验稳定的业务系统，也能从架构与工程化角度提升团队效率与系统质量。职业经历覆盖测试/测开、前端与后端链路（ 3年测试/测开 + 7年前端 + 1年前后端），让我在设计方案时天然兼顾可测性、可维护性与线上稳定性；同时具备2年以上管理经验，能够推进跨角色协作与项目按期上线。技术栈覆盖 Vue2/3、React、Next.js、Python、uniapp、小程序、Qiankun 微前端、GIS与可视化等；熟悉 Git、MySQL、Supabase 等工具与服务，并有架构治理、性能优化、部署与运维优化的实战经验。我希望加入重视工程质量与业务价值的团队，持续用技术把复杂问题做简单、把交付做可靠。",
+    "bio": "我长期深耕“可交付”的工程实践：既能把产品需求快速落地为体验稳定的业务系统，也能从架构与工程化角度提升团队效率与系统质量。职业经历覆盖测试/测开、前端与后端链路（ 3年测试/测开 + 7年前端 + 1年前后端），让我在设计方案时天然兼顾可测性、可维护性与线上稳定性；同时具备2年以上管理经验，能够推进跨角色协作与项目按期上线。技术栈覆盖 Vue2/3、React、Next.js、Node.js、Python、uniapp、小程序、Qiankun 微前端、GIS与可视化等；熟悉 Git、MySQL、Supabase 等工具与服务，并有架构治理、性能优化、部署与运维优化的实战经验。我希望加入重视工程质量与业务价值的团队，持续用技术把复杂问题做简单、把交付做可靠。",
     "skills": [
         {
             "label": "Vue2/3",

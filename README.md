@@ -1,3 +1,14 @@
+# Personal Portfolio Web Static
+### 我的求职个人作品集，展示了在前端、后端和全栈开发方面的专业技能和项目经验。通过这个网站，您可以了解我的技术能力、服务内容以及成功案例，并与我联系以实现您的项目需求。
+
+## 个人介绍
+- 昵称：Sean Hao
+- 职业：全栈开发人员(偏前端)
+- 联系方式：[h19111426051@163.com](mailto:h19111426051@163.com)
+- 个人介绍：[ 10+年计算机专业工作经验，其中7年前端 + 1年前后端一体 + 3年测试/测开背景的全栈工程师，擅长从0到1交付业务系统与工程化架构，兼顾性能、质量与上线效率。]
+
+## Description
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
