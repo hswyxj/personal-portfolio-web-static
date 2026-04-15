@@ -87,6 +87,14 @@ main section.reveal-item.is-visible {
     }
 }
 
+@media (max-width: 767px) {
+    main section.reveal-item {
+        opacity: 1;
+        transform: translateY(16px) scale(0.99);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+}
+
 html:not([data-scroll="0"]) .navbar {
     position: fixed;
     top: 0;

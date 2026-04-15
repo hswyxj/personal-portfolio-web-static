@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 export function useScrollReveal() {
   useEffect(() => {
-    if (typeof window === 'undefined' || typeof IntersectionObserver === 'undefined') {
+    if (typeof window === 'undefined' || typeof IntersectionObserver === 'undefined' || window.matchMedia('(max-width: 767px)').matches) {
       document.querySelectorAll('main section').forEach((section) => {
         section.classList.add('is-visible');
       });
@@ -15,15 +15,15 @@ export function useScrollReveal() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          if (entry.isIntersecting || entry.intersectionRatio > 0) {
             entry.target.classList.add('is-visible');
             observer.unobserve(entry.target);
           }
         });
       },
       {
-        rootMargin: '0px 0px -120px 0px',
-        threshold: 0.15,
+        rootMargin: '0px 0px -40px 0px',
+        threshold: 0.03,
       },
     );
 
