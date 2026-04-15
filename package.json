@@ -9,6 +9,7 @@
     "start": "next start",
     "lint": "eslint",
     "predeploy": "touch out/.nojekyll",
+    "build:predeploy": "next build && touch out/.nojekyll",
     "deploy": "gh-pages -d out --dotfiles"
   },
   "dependencies": {
