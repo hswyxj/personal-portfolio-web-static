@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useRef, useState, type PointerEvent } from 'react';
 import type { Testimonial } from '@/types/database.types';
 
 interface TestimonialsProps {
@@ -10,6 +10,43 @@ interface TestimonialsProps {
 
 export default function Testimonials({ testimonials, errorMessage }: TestimonialsProps) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const touchStartXRef = useRef<number | null>(null);
+  const touchStartYRef = useRef<number | null>(null);
+
+  const handleSwipe = (deltaX: number) => {
+    const threshold = 64;
+    if (Math.abs(deltaX) < threshold || testimonials.length <= 1) return;
+
+    setActiveIndex((currentIndex) =>
+      deltaX < 0
+        ? (currentIndex + 1) % testimonials.length
+        : (currentIndex - 1 + testimonials.length) % testimonials.length,
+    );
+  };
+
+  const handlePointerDown = (event: PointerEvent<HTMLDivElement>) => {
+    touchStartXRef.current = event.clientX;
+    touchStartYRef.current = event.clientY;
+  };
+
+  const handlePointerUp = (event: PointerEvent<HTMLDivElement>) => {
+    if (touchStartXRef.current === null || touchStartYRef.current === null) return;
+
+    const deltaX = event.clientX - touchStartXRef.current;
+    const deltaY = event.clientY - touchStartYRef.current;
+    touchStartXRef.current = null;
+    touchStartYRef.current = null;
+
+    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+      handleSwipe(deltaX);
+    }
+  };
+
+  const handlePointerCancel = () => {
+    touchStartXRef.current = null;
+    touchStartYRef.current = null;
+  };
+
   const activeTestimonial = testimonials[activeIndex] || testimonials[0];
   const sideTestimonials = testimonials.filter((_, index) => index !== activeIndex).slice(0, 2);
 
@@ -25,7 +62,14 @@ export default function Testimonials({ testimonials, errorMessage }: Testimonial
       ) : testimonials.length === 0 ? (
         <p className="text-gray-500">暂无客户评价</p>
       ) : (
-        <div className="relative max-w-6xl mx-auto flex items-center justify-center">
+        <div
+          className="relative max-w-6xl mx-auto flex items-center justify-center"
+          onPointerDown={handlePointerDown}
+          onPointerUp={handlePointerUp}
+          onPointerCancel={handlePointerCancel}
+          onPointerLeave={handlePointerCancel}
+          style={{ touchAction: 'pan-y' }}
+        >
           {sideTestimonials.map((item, index) => (
             <div
               key={item.id}

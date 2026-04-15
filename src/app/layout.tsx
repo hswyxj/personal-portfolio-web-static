@@ -1,5 +1,5 @@
 import './globals.css';
-
+import Live2DWidget from '@/components/Live2DWidget';
 
 export const metadata = {
   title: 'Sean - Fullstack Developer',
@@ -15,6 +15,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         {children}
+        <Live2DWidget />
       </body>
     </html>
   )

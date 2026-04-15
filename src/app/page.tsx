@@ -9,6 +9,7 @@ import Projects from '@/components/Projects';
 import Testimonials from '@/components/Testimonials';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import { useScrollReveal } from '@/lib/useScrollReveal';
 import type { Project, Profile, Service, Testimonial } from '@/types/database.types';
 
 const emptyProfile = {
@@ -247,6 +248,8 @@ export default function Home() {
     }
   ]);
   const [errorMessage, setErrorMessage] = useState('');
+
+  useScrollReveal();
 
   return (
     <main className="min-h-screen bg-white text-black font-sans selection:bg-[#FD6F00] selection:text-white">
