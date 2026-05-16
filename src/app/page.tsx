@@ -133,7 +133,19 @@ export default function Home() {
     {
         "id": "cb06bf23-16e9-49d1-a539-14650b55e0e1",
         "project_id": "550e8400-e29b-41d4-a716-446655440000",
-        "title": "企业官网 AI编程对话 | Next.js + Tailwindcss + Supabase Node.js",
+        "title": "AI智能项目技术文档分析整理系统 | Next.js + Tailwindcss + Supabase + Node.js + Anthropic API",
+        "description": "AI智能项目技术文档分析整理系统",
+        "category": "管理后台",
+        "image_url": `${process.env.NEXT_PUBLIC_IMAGES_URL}/assets/web10_1.png`,
+        "project_url": `${process.env.NEXT_PUBLIC_IMAGES_URL}/assets/web10_2.png`,
+        "github_url":null,
+        "featured": false,
+        "created_at": "2026-05-16T10:07:20.178596+00:00"
+    },
+    {
+        "id": "cb06bf23-16e9-49d1-a539-14650b55e0e1",
+        "project_id": "550e8400-e29b-41d4-a716-446655440000",
+        "title": "企业官网 AI编程对话 | Next.js + Tailwindcss + Supabase + Node.js",
         "description": "企业官网落地页（响应式）",
         "category": "企业官网",
         "image_url": `${process.env.NEXT_PUBLIC_IMAGES_URL}/assets/web2_1.png`,
@@ -181,7 +193,7 @@ export default function Home() {
     {
         "id": "ea559204-c565-42c0-8886-82578828dad6",
         "project_id": "550e8400-e29b-41d4-a716-446655440000",
-        "title": "工单系统 H5 | Vue3 + ECharts + Tailwindcss ",
+        "title": "工单系统 H5 | Vue3 + ECharts + Tailwindcss + Node.js",
         "description": "工单系统 H5（派单/处理/验收）",
         "category": "业务H5",
         "image_url": `${process.env.NEXT_PUBLIC_IMAGES_URL}/assets/web4_1.png`,
@@ -205,7 +217,7 @@ export default function Home() {
     {
         "id": "ea559204-c565-42c0-8886-82578828daa9",
         "project_id": "550e8400-e29b-41d4-a716-446655440000",
-        "title": "工单数据可视化大屏｜React + ECharts + Tailwindcss ",
+        "title": "工单数据可视化大屏｜React + ECharts + Tailwindcss + Node.js",
         "description": "工单数据可视化大屏｜全局态势",
         "category": "大屏可视化",
         "image_url": `${process.env.NEXT_PUBLIC_IMAGES_URL}/assets/web3_2.png`,
