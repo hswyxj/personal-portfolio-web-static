@@ -31,7 +31,7 @@ export default function Hero({ profile }: HeroProps) {
           <span className="pl-16 lg:pl-32 block">Developer</span>
         </h1>
         <p className="text-gray-600 text-lg leading-relaxed max-w-xl">
-          {profile?.hero_intro || "10+年计算机专业工作经验，其中7年前端 + 1年前后端一体 + 3年测试/测开背景的全栈工程师，擅长从0到1交付业务系统与工程化架构，兼顾性能、质量与上线效率。"}
+          {profile?.hero_intro || "10+年计算机专业工作经验，其中7年前端 + 2年前后端一体 + 3年测试/测开背景的全栈工程师，擅长从0到1交付业务系统与工程化架构，兼顾性能、质量与上线效率。"}
         </p>
         <div className="pt-4">
           <svg className="hidden" aria-hidden="true">
