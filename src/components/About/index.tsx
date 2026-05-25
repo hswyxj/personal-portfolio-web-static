@@ -13,7 +13,7 @@ interface AboutProps {
 }
 
 export default function About({ profile }: AboutProps) {
-  const defBio = "我长期深耕“可交付”的工程实践：既能把产品需求快速落地为体验稳定的业务系统，也能从架构与工程化角度提升团队效率与系统质量。职业经历覆盖测试/测开、前端与后端链路（ 3年测试/测开 + 7年前端 + 1年前后端），让我在设计方案时天然兼顾可测性、可维护性与线上稳定性；同时具备2年以上管理经验，能够推进跨角色协作与项目按期上线。技术栈覆盖 Vue2/3、React、Next.js、Python、uniapp、小程序、Qiankun 微前端、GIS与可视化等；熟悉 Git、MySQL、Supabase 等工具与服务，并有架构治理、性能优化、部署与运维优化的实战经验。我希望加入重视工程质量与业务价值的团队，持续用技术把复杂问题做简单、把交付做可靠。"
+  const defBio = "我长期深耕“可交付”的工程实践：既能把产品需求快速落地为体验稳定的业务系统，也能从架构与工程化角度提升团队效率与系统质量。职业经历覆盖测试/测开、前端与后端链路（ 3年测试/测开 + 7年前端 + 2年前后端），让我在设计方案时天然兼顾可测性、可维护性与线上稳定性；同时具备2年以上管理经验，能够推进跨角色协作与项目按期上线。技术栈覆盖 Vue2/3、React、Next.js、Python、uniapp、小程序、Qiankun 微前端、GIS与可视化等；熟悉 Git、MySQL、Supabase 等工具与服务，并有架构治理、性能优化、部署与运维优化的实战经验。我希望加入重视工程质量与业务价值的团队，持续用技术把复杂问题做简单、把交付做可靠。"
   return (
     <section id="about" className="container mx-auto px-6 py-20 lg:py-32 flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
       <div className="flex-1 flex justify-center lg:justify-start w-full relative">
